@@ -1,0 +1,9 @@
+services:
+  iptv-stremio-addon:
+    build: .
+    container_name: iptv-stremio
+    restart: unless-stopped
+    env_file:
+      - stack.env
+    ports:
+      - "${PORT:-3000}:3000"
